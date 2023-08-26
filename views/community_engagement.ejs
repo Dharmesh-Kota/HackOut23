@@ -1,0 +1,20 @@
+<ul id="project-contai">
+    <% for (project of projects) {%> 
+        <li class="project" id="<%=project.id%>">
+            <div class="project-image">
+                <a href="/project/project-description/<%=project.id%>"><img src="<%=project.avatar%>" alt="Project Image" height="300" width="500"></a>
+            </div>
+            <div class="project-details">
+                <div class="project-name">
+                    <a href="/project/project-description/<%=project.id%>"><%=project.name%></a>
+                </div>
+                <div class="project-client">
+                    <%=project.client%>
+                </div>
+                <div class="project-location">
+                    <%=project.location%>
+                </div>
+            </div>
+        </li>
+    <% } %>
+</div>

@@ -3,11 +3,11 @@
 <!-- Project Discription -->
 <div id="project-section">
     <div class="project-image">
-        <a href="/functionality/project-description/<%=project.id%>"><img src="<%=project.avatar%>" alt="Project Image" height="300" width="500"></a>
+        <img src="<%=project.avatar%>" alt="Project Image" height="300" width="500">
     </div>
     <div class="project-details">
         <div class="project-name">
-            <a href="/functionality/project-description/<%=project.id%>"><%=project.name%></a>
+            <p><%=project.name%></p>
         </div>
         <div class="project-budget">
             <%=project.budget%>
@@ -25,7 +25,7 @@
 </div>
 
 <!-- Project Images -->
-<%- include('./project_updates.ejs', {project: project, updates: updates})%>
+<%- include('./project_updates.ejs', {project: project, updates: updates, mode: mode})%>
 
 <!-- Comments Section -> Can be Entered by the Clients Only -->
 <%- include('./comments.ejs', {project: project, mode: mode, comments: comments})%>

@@ -49,6 +49,6 @@ let storage = multer.diskStorage({
 projectSchema.statics.uploadedAvatar = multer({storage: storage}).single('avatar');
 projectSchema.statics.avatarPath = AVATAR_PATH;
 
-const Project = mongoose.model('project', projectSchema);
+const Project = mongoose.model('Project', projectSchema);
 
 module.exports = Project;

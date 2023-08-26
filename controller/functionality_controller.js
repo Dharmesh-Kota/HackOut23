@@ -74,8 +74,10 @@ module.exports.project_disc = async function(req, res){
     try {
         
         let project = await Project.findById(req.params.id);
-        let updates = await Update.find({project_name: project.name});
-        let comments = await Comment.find({project: req.params.id, mode: 'private'});
+        let updates = await Update.find({project_name: project.name, mode: 'private'});
+        let comments = await Comment.find({project: req.params.id, mode: 'private'})
+            .sort('-createdAt')
+            .populate('user', 'name role');
 
         return res.render('project', {
             title: project.name,

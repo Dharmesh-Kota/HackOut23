@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const multer = require('multer');
 const path = require('path');
-const UPDATES_PATH = path.join('/uploads/updates/updates');
+const UPDATES_PATH = path.join('/uploads/project/updates');
 
 const updatesSchema = new mongoose.Schema({
     project_name: {
@@ -11,6 +11,10 @@ const updatesSchema = new mongoose.Schema({
     description: {
         type: String,
         require: true
+    },
+    mode: {
+        type: String,
+        required: true
     },
     image: {
         type: String,
@@ -27,12 +31,12 @@ let storage = multer.diskStorage({
     filename: function(req, file, cb){
         cb(null, file.fieldname + '-' + Date.now());
     }
-})
+});
 
 // static methods
-updatesSchema.statics.uploadedUpdates = multer({storage: storage}).single('updates');
+updatesSchema.statics.uploadedUpdates = multer({storage: storage}).single('image');
 updatesSchema.statics.updatesPath = UPDATES_PATH;
 
-const Updates = mongoose.model('updates', updatesSchema);
+const Updates = mongoose.model('Updates', updatesSchema);
 
 module.exports = Updates;
