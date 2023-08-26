@@ -1,1 +1,1 @@
-nav{display:flex;justify-content:space-between}
+nav{display:flex;justify-content:space-between;height:15vh;align-items:center;background-color:#f5f5f5}nav #title img{height:7rem;width:10rem}nav #menu{margin-right:1.5rem}nav #menu a{text-decoration:none;color:#000;font-size:1.5rem;font-weight:bold;margin-left:1.2rem}nav #menu a:hover{color:#d5833f}

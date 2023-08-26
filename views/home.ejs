@@ -1,17 +1,48 @@
 <title><%=title%></title>
+<link rel="stylesheet" href="/css/home.css">
 
 <div id="main">
-    <p>Welcme to Rodic Consulting!</p>
+
+    <div id="welcome">
+        <p>We Revolutionize Infrastructure: <span>From Blueprints to Bytes</span></p>
+    </div>
     
     <div id="home_links">
         <% if(locals.user){
             if (locals.user.role == 'builder') { %>
-                <p><a href="/functionality/portfolio">Portfolio</a></p>
-                <p><a href="/functionality/add-project">Add Project</a></p>
+                <div class="home-links">
+                    <p class="functionality"><a href="/functionality/portfolio">Portfolio</a></p>
+                    <div class="description">
+                        <p>An interactive platform where Builders and Clients
+                            can communicate and collaborate on projects. 
+                        </p>
+                    </div>
+                </div>
+                <div class="home-links">
+                    <p class="functionality"><a href="/functionality/add-project">Add Project</a></p>
+                    <div class="description">
+                        <p>Builders can add projects to their portfolio through which they
+                            can communicate and share progress with Clients.</p>
+                    </div>
+                </div>
             <% } else if (locals.user.role == 'client') { %>
-                <p><a href="/functionality/portfolio">Portfolio</a></p>
+                <div class="home-links">
+                    <p class="functionality"><a href="/functionality/portfolio">Portfolio</a></p>
+                    <div class="description">
+                        <p>An interactive platform where Builders and Clients
+                            can communicate and collaborate on projects. 
+                        </p>
+                    </div>
+                </div>
             <% } %>
-            <p><a href="/project/community-engagement">Projects</a></p>
+            <div class="home-links">
+                <p class="functionality"><a href="/project/community-engagement">Projects</a></p>
+                <div class="description">
+                    <p>View projects that are currently in progress. Local 
+                        Community members can also engage with Builders and
+                        Clients on these projects.
+                    </p>
+            </div>
         <% } %>
     </div>
     
