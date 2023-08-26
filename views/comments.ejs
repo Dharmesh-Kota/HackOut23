@@ -1,7 +1,9 @@
+<link rel="stylesheet" href="/css/comments.css">
+
 <div id="comment-container">
     <% if(locals.user.role == 'client' || locals.user.role == 'community'){%> 
         <form action="/project/comments/create" method="post" id="new-comment-form">
-            <textarea name="content" id="content" cols="30" rows="2" placeholder="Client can add Comments"></textarea>
+            <textarea name="content" id="content" cols="30" rows="2" placeholder="Clients<%if(locals.user.role=='community'){%> and Locals<%}%> can add Comments"></textarea>
             <input type="hidden" name="user_id" value="<%= user._id %>">
             <input type="hidden" name="name" value="<%=project.name%>">
             <input type="hidden" name="mode" value="<%=mode%>">
