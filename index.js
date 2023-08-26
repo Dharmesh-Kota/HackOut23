@@ -29,9 +29,9 @@ const cookieParser = require('cookie-parser');
 const crypto = require('crypto');
 
 // importing the passport js libraries
-// const passport = require('passport');
-// const passportLocal = require('./config/passport-local-strategy');
-// const passportJWT = require('./config/passport-jwt-strategy');
+const passport = require('passport');
+const passportLocal = require('./config/passport-local-strategy');
+const passportJWT = require('./config/passport-jwt-strategy');
 
 // giving access to the mongo-connect
 const MongoStore = require('connect-mongo');
@@ -60,6 +60,9 @@ app.use(cookieParser());
 
 // providing access to static files
 app.use(express.static('./assets'));
+
+// making the uploads path available to the browser
+app.use('/uploads', express.static(__dirname + '/uploads'));
 
 app.use(expressLayouts);
 
@@ -91,11 +94,11 @@ app.use(session({
 }));
 
 // handling passport middlewares
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 
 // handling the checkAuthenticated function for evry request as a middleware
-// app.use(passport.setAuthenticatedUser);
+app.use(passport.setAuthenticatedUser);
 
 // using the flash middleware
 app.use(flash());

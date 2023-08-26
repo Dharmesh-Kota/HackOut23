@@ -1,0 +1,28 @@
+<title><%=title%></title>
+
+<div id="new-project-container">
+    <form action="/functionality/new-project" method="post" enctype="multipart/form-data">
+        <label for="name">Project Name</label>
+        <input type="text" placeholder="Enter project Name" id="name" name="name"> <br>
+    
+        <label for="budget">Budget</label>
+        <input type="number" step="0.01" placeholder="Enter project's budget" id="budget" name="budget"> <br>
+
+        <label for="client">Client</label>
+        <input type="text" placeholder="Enter Client's Name/Company" id="client" name="client"> <br>
+
+        <input type="hidden" name="builder" id="builder" value="<%=builder%>">
+
+        <label for="location">Location</label>
+        <input type="text" placeholder="Enter project's location" id="location" name="location"> <br>
+    
+        <label for="description">Description</label>
+        <textarea placeholder="Enter small description of project" id="description" name="description" cols="50" rows="4">
+        </textarea> <br>
+    
+        <label for="avatar">Project Banner</label>
+        <input type="file" name="avatar" id="avatar" placeholder="Project Banner"> <br>
+    
+        <button type="submit">Add Project</button>
+    </form>
+</div>

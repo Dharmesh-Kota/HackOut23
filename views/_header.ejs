@@ -1,1 +1,13 @@
-<p>Header</p>
+<nav>
+    <div id="title">Rodic360</div>
+    <div id="menu">
+        <a href="#">Weather</a>
+        <a href="#">Projects</a>
+        <% if (locals.user) { %>
+            <a href="/"><%=user.username%></a>
+            <a href="/users/sign-out">LOGOUT</a>
+        <% } else { %>
+            <a href="/users/sign-in">Login</a>
+        <% } %>
+    </div>
+</nav>

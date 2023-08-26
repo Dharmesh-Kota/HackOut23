@@ -1,1 +1,18 @@
-<p>Home Page</p>
+<title><%=title%></title>
+
+<div id="main">
+    <p>Welcme to Rodic Consulting</p>
+    
+    <div id="home_links">
+        <% if(locals.user){
+            if (locals.user.role == 'builder') { %>
+                <p><a href="/functionality/portfolio">Portfolio</a></p>
+                <p><a href="/functionality/add-project">Add Project</a></p>
+            <% } else if (locals.user.role == 'client') { %>
+                <p><a href="/functionality/portfolio">Portfolio</a></p>
+            <% } %>
+            <p><a href="#">Community Engagement</a></p>
+        <% } %>
+    </div>
+    
+</div>

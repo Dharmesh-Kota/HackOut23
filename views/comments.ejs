@@ -1,0 +1,36 @@
+<div id="comment-container">
+    <% if(locals.user.role == 'client'){%> 
+        <form action="/project/comments/create" method="post" id="new-comment-form">
+            <textarea name="content" id="content" cols="30" rows="2" placeholder="Client can add Comments"></textarea>
+            <input type="hidden" name="user_id" value="<%= user._id %>">
+            <input type="hidden" name="name" value="<%=project.name%>">
+            <input type="hidden" name="mode" value="<%=mode%>">
+            <input type="submit" value='Add Comment'>
+        </form>
+    <% } %>
+
+    <div id="comment-list">
+        <ul>
+            <% for(comment of comments) {%>
+                <li id="comment-<%=comment._id%>">
+                    <p>
+                        <% if(locals.user && locals.user.id == comment.user._id){%>
+                            <a href="/project/comments/destroy/?id=<%=comment.id%>&topic=<%=project.name%>" class="destroy-comments">X</a>
+                        <% } %>
+    
+                        <%= comment.content %>
+                        <br>
+    
+                        <small>
+                            <%=comment.user.name%>
+                        </small>
+                    </p>
+                </li>
+            <% } %>
+        </ul>
+
+    </div>
+
+</div>
+
+<script src="/js/comments.js"></script>

@@ -1,0 +1,48 @@
+<title><%=title%></title>
+
+<div id="sign-up-container">
+    <form action="/users/new-user" method="post">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your Name">
+        </div>
+        <div>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="username">
+        </div>
+        <div>
+            <label for="email">E-Mail</label>
+            <input type="text" id="email" name="email" placeholder="email@abc.com">
+        </div>
+        <div>
+            <label for="password">Create Password</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div>
+            <label for="re_password">Re-enter Password</label>
+            <input type="password" id="re_password" name="re_password">    
+        </div>
+        <div>
+            <label for="role">You are</label>
+            <div id="role">
+                <input type="radio" id="community" name="role" value="community">
+                <label for="option1">Local Community</label>
+
+                <input type="radio" id="client" name="role" value="client">
+                <label for="option2">Client</label>
+
+                <input type="radio" id="builder" name="role" value="builder">
+                <label for="option3">Builder</label>
+            </div>
+            <div>
+                <label for="company">Enter Associated Project if you are a local <br>community else
+                    enter your company name</label>
+                <input type="text" id="company" name="company">    
+            </div>
+        </div>
+        <div id="button">
+            <button type="submit" id="submit">Register</button>
+        </div>
+    
+    </form>
+</div>
