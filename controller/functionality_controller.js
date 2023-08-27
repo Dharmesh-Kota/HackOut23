@@ -1,6 +1,7 @@
 const Project = require('../models/project');
 const Update = require('../models/updates');
 const Comment = require('../models/comments');
+const Material = require('../models/materials');
 
 // Require the add projects model
 module.exports.add_project = function(req, res){
@@ -91,4 +92,46 @@ module.exports.project_disc = async function(req, res){
         return res.redirect('back');
     }
     
+}
+
+// Material Management
+
+// Rendering the Material Management Page
+module.exports.material_management = async function(req, res){
+
+    try {
+        
+        let materials = await Material.find({}).sort('-createdAt');
+        
+        return res.render('material_management', {
+            title: "Material Management",
+            materials: materials
+        });
+
+    } catch (error) {
+        console.log('Error while fetching the materials: ', error);
+        return res.redirect('back');
+    }
+
+}
+
+// Add Material
+module.exports.add_material = async function(req, res){
+    try {
+        
+        await Material.create({
+            name: req.body.name,
+            quantity: req.body.quantity,
+            price: req.body.price,
+            description: req.body.description,
+            amount: parseFloat(req.body.quantity) * parseFloat(req.body.price)
+        });
+
+        req.flash('success', 'Material added successfully!');
+        return res.redirect('back');
+
+    } catch (error) {
+        console.log('Error while adding the material: ', error);
+        return res.redirect('back');
+    }
 }
