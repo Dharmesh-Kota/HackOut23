@@ -1,14 +1,19 @@
 <nav>
     <div id="title"><img src="/images/RODIC-LOGO.png" alt=""></div>
     <div id="menu">
-        <a href="#">Weather</a>
-        <a href="/">Home</a>
-        <a href="/project/community-engagement">Projects</a>
-        <% if (locals.user) { %>
-            <a href="/"><%=user.username%></a>
-            <a href="/users/sign-out">LOGOUT</a>
-        <% } else { %>
-            <a href="/users/sign-in">Login</a>
-        <% } %>
+        <button id="menuButton">Menu</button>
+        <ul id="menuList">
+            <li><a href="#">Weather</a></li>
+            <li><a href="/project/community-engagement">Projects</a></li>
+            <li><a href="/">Home</a></li>
+            <% if (locals.user) { %>
+                <li><a href="/"><%=user.username%></a></li>
+                <li><a href="/users/sign-out">LOGOUT</a></li>
+            <% } else { %>
+                <li><a href="/users/sign-in">Login</a></li>
+            <% } %>
+        </ul>
     </div>
 </nav>
+
+<script src="/js/_header.js"></script>

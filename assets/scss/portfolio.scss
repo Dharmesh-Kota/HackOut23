@@ -1,58 +1,77 @@
-#projects-container {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 0;
-    margin: 0;
-    
-    .projects-list {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      width: calc(33.33% - 20px);
-      
-      .project {
-        display: flex;
-        flex-direction: column;
-        
-        .project-image {
+/* Reset some default styling */
+body, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* General styling */
+.projects-container {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0;
+  margin: 1.5rem;
+}
+
+.projects-list {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%; // Take full width on smaller screens
+  margin-bottom: 20px; // Adjust margin for spacing
+
+  .project {
+      display: flex;
+      flex-direction: column;
+
+      .project-image {
           a {
-            display: block;
-            img {
-              width: 100%;
-              height: auto;
-              object-fit: cover;
-            }
-          }
-        }
-        
-        .project-details {
-          padding: 20px;
-          
-          .project-name {
-            font-size: 18px;
-            margin-bottom: 10px;
-            
-            a {
-              color: #007bff;
-              text-decoration: none;
-              transition: color 0.3s ease;
-              
-              &:hover {
-                color: #0056b3;
+              display: block;
+              img {
+                  width: 100%;
+                  height: auto;
+                  object-fit: cover;
               }
-            }
           }
-          
+      }
+
+      .project-details {
+          padding: 20px;
+
+          .project-name {
+              font-size: 18px;
+              margin-bottom: 10px;
+
+              a {
+                  color: #007bff;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+
+                  &:hover {
+                      color: #0056b3;
+                  }
+              }
+          }
+
           .project-budget,
           .project-location {
-            font-size: 14px;
-            color: #444;
+              font-size: 14px;
+              color: #444;
           }
-        }
       }
-    }
+  }
+}
+
+@media (min-width: 768px) {
+  .projects-list {
+      width: calc(50% - 20px); // Display 2 projects per row
   }
   
+  @media (min-width: 1200px) {
+      .projects-list {
+          width: calc(33.33% - 20px); // Display 3 projects per row
+      }
+  }
+}

@@ -23,20 +23,23 @@
     
     <h2>Project Updates</h2>
     <ul id="images-container">
-
-        <%for(update of updates) {%>
-            <li id="update-<%=update._id%>" class="update-images">
-                <p>
-                    <%= update.description %>
-                    <br>
-                    <small>
-                        Date: <%=(update.createdAt).toDateString()%>
-                        Time: <%= (update.createdAt).toTimeString()%>
-                    </small>
-                </p>
-                <img src="<%=update.image%>" alt="Project Image" height="300" width="500">
-            </li>
+        <% for(update of updates) {%>
+          <li id="update-<%=update._id%>" class="update-images">
+            <div class="image-container">
+              <img src="<%=update.image%>" alt="Project Image">
+            </div>
+            <div class="description-container">
+              <p>
+                <%= update.description %>
+                <br>
+                <small>
+                  Date: <%=(update.createdAt).toDateString()%>
+                  Time: <%= (update.createdAt).toTimeString()%>
+                </small>
+              </p>
+            </div>
+          </li>
         <% } %>
-
-    </ul>
+      </ul>
+      
 </div>

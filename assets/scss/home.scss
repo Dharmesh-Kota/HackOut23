@@ -1,60 +1,91 @@
-#main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    #welcome{
-        height: 85vh;
-        background-image: url("/images/home_bg.webp");
-        background-size: cover;    
-        display: flex;
-        flex-direction: column;
-        justify-content: center;        
-        color: #000;
-        font-size: 3rem;
-        font-weight: bold;
-        // margin-bottom: 1rem;
+/* Reset some default styling */
+body, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* General styling */
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  #welcome {
+      height: 70vh; // Adjust height for better fit on smaller screens
+      background-image: url("/images/home_bg.webp");
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: #000;
+      font-size: 2.5rem; // Decrease font size for better readability
+      font-weight: bold;
+
+      p {
+          margin-top: 3rem; // Adjust margin for better spacing
+          span {
+              color: #fca208;
+          }
+      }
+  }
+
+  #home_links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px; // Adjust the gap between links
+      margin-top: 15px; // Add some top margin for spacing
+
+      .home-links {
+          background-color: #fdf6ec;
+          padding: 15px; // Decrease padding for better fitting
+          border-radius: 8px;
+          width: 100%;
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+          margin: 10px 0;
+
+          .functionality {
+              font-size: 1.6rem; // Decrease font size for better readability
+              font-weight: bold;
+              margin-bottom: 8px; // Adjust margin for better spacing
+          }
+
+          .description {
+              font-size: 1.2rem; // Decrease font size for better readability
+              color: #666;
+          }
+
+          a {
+              text-decoration: none;
+              color: #007bff;
+          }
+
+          a:hover {
+              text-decoration: underline;
+          }
+      }
+  }
+
+  @media (min-width: 768px) {
+    #main {
+      #welcome{
+        color: #fca208;
         p{
-            margin-top: 5rem;
-            span{
-                color: #fca208;
-            }
+          span{
+            color: #000;
+          }
         }
+      }
     }
     #home_links {
-        display: flex;
-        justify-content: center; // To horizontally center the links
-        gap: 20px; // Adjust the gap between links as needed
-        flex-wrap: wrap; // Wrap the links if the container width is limited
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start; // Align items to the top
+
+        .home-links {
+            width: calc(33.33% - 20px); // Adjust width calculation for better spacing
+        }
     }
-      
-    .home-links {
-        background-color: #fdf6ec;
-        padding: 20px;
-        border-radius: 8px;
-        width: 300px;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-        margin: 10px;
-    }
-      
-    .functionality {
-        font-size: 1.8rem;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-      
-    .description {
-        font-size: 1.4rem;
-        color: #666;
-    }
-      
-    a {
-        text-decoration: none;
-        color: #007bff;
-    }
-      
-    a:hover {
-        text-decoration: underline;
-    }
-      
+}
 }

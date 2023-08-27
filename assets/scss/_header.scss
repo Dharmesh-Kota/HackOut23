@@ -1,26 +1,97 @@
-nav{
+nav {
     display: flex;
     justify-content: space-between;
-    height: 15vh;
     align-items: center;
     background-color: #f5f5f5;
-    #title{
-        img{
+    padding: 0 2rem;
+    
+    #title {
+        img {
             height: 7rem;
             width: 10rem;
         }
     }
-    #menu{
-        margin-right: 1.5rem;
-        a{
-            text-decoration: none;
-            color: #000;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-left: 1.2rem;
+    
+    #menu {
+        display: flex;
+        align-items: center;
+
+        button {
+            display: none;
+            @media (max-width: 768px) {
+                display: block;
+                font-size: 1rem;
+                padding: 0.5rem 1rem;
+                background-color: #d5833f;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: #c17135;
+                }
+            }
         }
-        a:hover{
-            color: #d5833f;
+
+        ul {
+            display: flex;
+            list-style: none;
+            gap: 1.2rem;
+
+            li {
+                a {
+                    text-decoration: none;
+                    color: #000;
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    margin-left: 1.2rem;
+
+                    &:hover {
+                        color: #d5833f;
+                    }
+                }
+            }
+
+            &.show {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 23%; /* Position the dropdown below the button */
+                left: 0;
+                z-index: 2;
+                background-color: #f5f5f5;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 4px;
+                gap: 0.8rem;
+                padding: 1rem 0;
+                width: 100%;
+            }
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+
+        #menu {
+            margin-top: 1.5rem;
+
+            ul {
+                flex-direction: column;
+                gap: 0.8rem;
+
+                li {
+                    a {
+                        margin: 0.3rem 0;
+                    }
+                }
+            }
         }
     }
 }

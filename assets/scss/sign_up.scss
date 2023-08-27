@@ -1,70 +1,84 @@
-/* Reset some default styling */
-body, p {
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* General styling */
-  #sign-up-container {
-    max-width: 500px;
-    margin: 1.5rem auto;
-    padding: 40px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
+/* General styling */
+#sign-up-container {
+  max-width: 500px;
+  margin: 1.5rem auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
   form {
-    div {
-      margin-bottom: 20px;
-      
-      label {
-        display: block;
-        font-weight: bold;
+      div {
+          margin-bottom: 15px;
+
+          label {
+              display: block;
+              font-weight: bold;
+              margin-bottom: 5px;
+          }
+
+          input[type="text"],
+          input[type="password"] {
+              width: 100%;
+              padding: 10px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+          }
+
+          #role {
+              display: flex;
+              margin-top: 5px;
+
+              input[type="radio"] {
+                  margin-right: 5px;
+              }
+
+              label {
+                  font-weight: normal;
+                  margin-right: 15px;
+              }
+          }
       }
-      
-      input[type="text"],
-      input[type="password"] {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
+
+      #button {
+          display: flex;
+          justify-content: center;
+          margin-top: 20px;
+
+          button[type="submit"] {
+              background-color: #007bff;
+              color: #fff;
+              border: none;
+              border-radius: 4px;
+              padding: 10px 20px;
+              font-size: 16px;
+              cursor: pointer;
+              transition: background-color 0.3s ease;
+
+              &:hover {
+                  background-color: #0056b3;
+              }
+          }
       }
-  
-      #role {
-        display: flex;
-        margin-top: 5px;
-  
-        input[type="radio"] {
-          margin-right: 5px;
-        }
-  
-        label {
-          font-weight: normal;
-          margin-right: 15px;
-        }
-      }
-    }
-  
-    #button {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-  
-      button[type="submit"] {
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-  
-        &:hover {
-          background-color: #0056b3;
-        }
-      }
-    }
   }
-  
+}
+
+@media (min-width: 768px) {
+  #sign-up-container {
+      padding: 40px;
+
+      form {
+          div {
+              margin-bottom: 20px;
+          }
+
+          #button {
+              margin-top: 30px;
+
+              button[type="submit"] {
+                  font-size: 18px;
+              }
+          }
+      }
+  }
+}
