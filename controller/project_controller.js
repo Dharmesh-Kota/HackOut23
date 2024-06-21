@@ -31,7 +31,7 @@ module.exports.community_engagement = async function(req, res){
     let projects = await Project.find({}).exec();
 
     return res.render('community_engagement', {
-        title: "Rodic | Community Engagement",
+        title: "ConstructLink | Community Engagement",
         projects: projects
     });
 }

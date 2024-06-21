@@ -3,14 +3,14 @@ const User = require('../models/user');
 // Sign-In Page Rendering
 module.exports.sign_in = function(req, res){
     return res.render('sign_in', {
-        title: "Rodic | Sign In"
+        title: "ConstructLink | Sign In"
     });
 }
 
 // Sign-Up Page Rendering
 module.exports.sign_up = function(req, res){
     return res.render('sign_up', {
-        title: "Rodic | Register"
+        title: "ConstructLink | Register"
     });
 }
 

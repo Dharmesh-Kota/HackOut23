@@ -3,19 +3,19 @@ const contact_mailer = require('../mailers/contact');
 
 module.exports.home = function(req, res){
     return res.render('home', {
-        title: "Rodic | Home"
+        title: "ConstructLink | Home"
     });
 }
 
 module.exports.about = function(req, res){
     return res.render('about', {
-        title: "Rodic | About"
+        title: "ConstructLink | About"
     });
 }
 
 module.exports.contact = function(req, res){
     return res.render('contact', {
-        title: "Rodic | Contact"
+        title: "ConstructLink | Contact"
     });
 }
 
