@@ -1,58 +1,119 @@
-/* Reset some default styling */
 body, p {
   margin: 0;
   padding: 0;
 }
 
-/* General styling */
 #main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  overflow: hidden;
 
   #welcome {
-      height: 70vh; // Adjust height for better fit on smaller screens
-      background-image: url("/images/home_bg.webp");
-      background-size: cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      color: #000;
-      font-size: 2.5rem; // Decrease font size for better readability
-      font-weight: bold;
+    height: 70vh;
+    width: 100%;
+    background-image: url("/images/slider-3.jpg");
+    background-size: cover;
+    background-position: center; 
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center; 
+    color: #ffffff;
+    padding: 0 2rem; 
+    
+    .welcome-text {
+        max-width: 50%; 
+        padding: 0 25px;
+        text-align: right; 
+    }
 
-      p {
-          margin-top: 3rem; // Adjust margin for better spacing
-          span {
-              color: #fca208;
-          }
-      }
+    p {
+        font-size: 2.5rem; 
+        font-weight: bold;
+        margin: 0; 
+        span {
+            color: #fca208;
+        }
+    }
+
+    .welcome-button {
+        display: inline-block;
+        margin-top: 1rem; 
+        padding: 0.75rem 1.5rem;
+        background-color: #d5833f; 
+        color: #fff; 
+        text-decoration: none; 
+        font-size: 1.25rem; 
+        font-weight: bold;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #c17135; 
+        }
+    }
+  }
+
+  #cards-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 2rem 0 1rem 0;
+    text-align: center;
+    color: #333;
+  }
+
+  #cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1rem; /* Gap between grid items */
+    justify-items: center; /* Center items horizontally */
+
+    .card {
+        background-color: #fdf6ec;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+
+        h3 {
+            font-size: 2rem;
+            color: #d5833f;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.25rem;
+            color: #666;
+        }
+    }
   }
 
   #home_links {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 15px; // Adjust the gap between links
-      margin-top: 15px; // Add some top margin for spacing
+      gap: 15px; 
+      margin-top: 15px; 
+      margin-bottom: 80px;
 
       .home-links {
           background-color: #fdf6ec;
-          padding: 15px; // Decrease padding for better fitting
+          padding: 15px; 
           border-radius: 8px;
           width: 100%;
           box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
           margin: 10px 0;
 
           .functionality {
-              font-size: 1.6rem; // Decrease font size for better readability
+              font-size: 1.6rem; 
               font-weight: bold;
-              margin-bottom: 8px; // Adjust margin for better spacing
+              margin-bottom: 8px; 
           }
 
           .description {
-              font-size: 1.2rem; // Decrease font size for better readability
+              font-size: 1.2rem; 
               color: #666;
           }
 
@@ -69,23 +130,24 @@ body, p {
 
   @media (min-width: 768px) {
     #main {
-      #welcome{
+      #welcome {
         color: #fca208;
-        p{
-          span{
+        p {
+          span {
             color: #000;
           }
         }
       }
     }
+
     #home_links {
         flex-direction: row;
         justify-content: space-between;
-        align-items: flex-start; // Align items to the top
+        align-items: flex-start; 
 
         .home-links {
-            width: calc(33.33% - 20px); // Adjust width calculation for better spacing
+            width: calc(33.33% - 20px); 
         }
     }
-}
+  }
 }

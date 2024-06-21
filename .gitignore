@@ -2,3 +2,4 @@ hackout_id_rsa.pub
 hackout_id_rsa
 node_modules/
 IDEAS/
+.env

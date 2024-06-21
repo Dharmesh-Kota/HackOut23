@@ -2,96 +2,105 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f5f5f5;
+    background-color: #f5f5f5; /* Header background color */
     padding: 0 2rem;
-    
-    #title {
-        img {
-            height: 7rem;
-            width: 10rem;
-        }
-    }
-    
-    #menu {
-        display: flex;
-        align-items: center;
+}
 
-        button {
-            display: none;
-            @media (max-width: 768px) {
-                display: block;
-                font-size: 1rem;
-                padding: 0.5rem 1rem;
-                background-color: #d5833f;
-                color: #fff;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
+nav #title {
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5; /* Ensure this matches the header background color */
+    padding: 0.5rem; /* Optional: Add padding if needed to space the image from the edges */
+}
 
-                &:hover {
-                    background-color: #c17135;
-                }
-            }
-        }
+nav #title img {
+    height: 5.5rem;
+    width: auto; /* Ensure the aspect ratio is maintained */
+    max-width: 15rem; /* Increase the max-width to fit the landscape logo */
+}
 
-        ul {
-            display: flex;
-            list-style: none;
-            gap: 1.2rem;
+nav #menu {
+    display: flex;
+    align-items: center;
+}
 
-            li {
-                a {
-                    text-decoration: none;
-                    color: #000;
-                    font-size: 1.5rem;
-                    font-weight: bold;
-                    margin-left: 1.2rem;
+nav #menu button {
+    display: none;
+}
 
-                    &:hover {
-                        color: #d5833f;
-                    }
-                }
-            }
-
-            &.show {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 23%; /* Position the dropdown below the button */
-                left: 0;
-                z-index: 2;
-                background-color: #f5f5f5;
-                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-                border-radius: 4px;
-                gap: 0.8rem;
-                padding: 1rem 0;
-                width: 100%;
-            }
-
-            @media (max-width: 768px) {
-                display: none;
-            }
-        }
+@media (max-width: 768px) {
+    nav #menu button {
+        display: block;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        background-color: #d5833f;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
     }
 
-    @media (max-width: 768px) {
+    nav #menu button:hover {
+        background-color: #c17135;
+    }
+}
+
+nav #menu ul {
+    display: flex;
+    list-style: none;
+    gap: 1.2rem;
+}
+
+nav #menu ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 1.2rem;
+}
+
+nav #menu ul li a:hover {
+    color: #d5833f;
+}
+
+nav #menu ul.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 23%;
+    left: 0;
+    z-index: 2;
+    background-color: #f5f5f5;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    gap: 0.8rem;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    nav #menu ul {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
         flex-direction: column;
         align-items: center;
+    }
 
-        #menu {
-            margin-top: 1.5rem;
+    nav #menu {
+        margin-top: 1.5rem;
+    }
 
-            ul {
-                flex-direction: column;
-                gap: 0.8rem;
+    nav #menu ul {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
 
-                li {
-                    a {
-                        margin: 0.3rem 0;
-                    }
-                }
-            }
-        }
+    nav #menu ul li a {
+        margin: 0.3rem 0;
     }
 }
